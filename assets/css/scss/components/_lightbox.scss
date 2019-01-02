@@ -96,3 +96,16 @@ button {
 		@include box-shadow(0 0 14px 0 rgba(0,0,0,0.3));
 	}
 }
+
+.lightbox-image {
+	display: block;
+	overflow: hidden;
+	img {
+		@include transition(ease-out 0.2s);
+	}
+	&:hover {
+		img {
+			@include transform(scale(1.02));
+		}
+	}
+}

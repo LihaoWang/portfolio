@@ -16,9 +16,6 @@
             position: relative;
             cursor: pointer;
             padding: 5px 0;
-			h1, h2, h3, h4, h5, h6 {
-				margin: 0;
-			}
             &:before, &:after {
                 content: '';
                 position: absolute;
@@ -37,6 +34,9 @@
                 height: 7px;
                 @include transition(linear 0.1s);
             }
+			h1, h2, h3, h4, h5, h6 {
+				margin: 0;
+			}
 		}
 		.accordion-content {
             position: relative;
@@ -52,13 +52,24 @@
             }
         }
 	}
+    //
+    // Accordion - Style 2 //
+    //
+    &.style-2 {
+        li {
+            border: 1px solid $border-grey;
+            border-radius: 5px;
+            margin-bottom: 6px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
 }
-
-.bg-dark, .bg-dark-lighter, 
-.bg-black-01, .bg-black-02, .bg-black-03, .bg-black-04, .bg-black-05, .bg-black-06, .bg-black-07, .bg-black-08, .bg-black-09 {
+.bg-dark, .bg-dark-lighter, .bg-dark-lightest, div[class^='bg-black'], div[class*=' bg-black'] {
     .accordion {
         li {
-            border-color: $color-white-01;
+            border-color: $color-white-02;
             .accordion-title {
                 &:before, &:after {
                     background: $color-white;

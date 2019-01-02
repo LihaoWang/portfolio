@@ -7,7 +7,7 @@
 	bottom: 80px;
 	left: 0;
 	width: 100%;
-	padding: 0 30px;
+	padding: 0 20px;
 	.owl-carousel, .owl-stage-outer, .owl-stage, .owl-item {
 		height: 100%;
 	}
@@ -77,8 +77,8 @@
 			&:hover {
 				.home-portfolio-carousel-img {
 					img {
-						@include transform(translateX(-50%) scale(1.03));
-						@include filter(blur(4px));
+						@include transform(translateX(-50%) scale(1.02));
+						@include filter(blur(2px));
 					}
 				}
 				.home-portfolio-carousel-content {

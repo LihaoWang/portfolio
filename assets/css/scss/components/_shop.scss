@@ -136,6 +136,31 @@
 	}
 }
 
+//
+// Product - Hover style 2 //
+//
+.product-hover-style-2 {
+	.product {
+		.product-img {
+			.product-img-hover {
+				@include transform(translateY(0));
+				visibility: hidden;
+				opacity: 0;
+				@include transition(ease-out 0.2s);
+			}
+			&:hover {
+				img {
+					@include transform(translateY(0));
+				}
+				.product-img-hover {
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
 .product-price {
 	h1, h2, h3, h4, h5, h6 {
 		span {
@@ -160,6 +185,11 @@
 .product-rating {
 	color: $color-dark;
 	font-size: 14px;
+}
+.bg-dark, .bg-dark-lighter, .bg-dark-lightest, div[class^='bg-black'], div[class*=' bg-black'] {
+	.product-rating {
+		color: $color-white;
+	}
 }
 
 .product-category {
@@ -255,6 +285,11 @@
 		}
 	}
 }
+.bg-dark, .bg-dark-lighter, .bg-dark-lightest, div[class^='bg-black'], div[class*=' bg-black'] {
+	.product-list {
+		border-color: $color-white-02;
+	}
+}
 
 //
 // Shop Sidebar //
@@ -339,6 +374,13 @@
 		}
 	}
 }
+.bg-dark, .bg-dark-lighter, .bg-dark-lightest, div[class^='bg-black'], div[class*=' bg-black'] {
+	.shop-sidebar {
+		.shop-sidebar-box {
+			border-color: $color-white-02;
+		}
+	}
+}
 
 //
 // Product Single Page //
@@ -387,7 +429,7 @@
 			.owl-prev, .owl-next {
 				visibility: hidden;
 				opacity: 0;
-				background: $color-black-03;
+				background: $color-black-04;
 				width: 50px;
 				height: 50px;
 				border-radius: 50%;
@@ -411,11 +453,12 @@
 				bottom: 20px;
 				left: 50%;
 				@include transform(translateX(-50%));
-				background: $color-black-03;
+				background: $color-black-04;
 				border-radius: 40px;
 				padding: 10px 14px;
 				.owl-dot {
 					&:before {
+						opacity: 1;
 						background: $color-white-05;
 					}
 					&:hover, &:focus, &.active {

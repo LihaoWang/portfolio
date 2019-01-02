@@ -18,7 +18,7 @@
 			margin: 0;
 			&:before {
 				content: '\f155';
-				font-family: 'FontAwesome';
+				font-family: 'Font Awesome 5 Free';
 				position: absolute;
 				top: 10px;
 				left: -10px;
@@ -49,12 +49,13 @@
 	}
 }
 
-.bg-grey, .bg-grey-lighter {
+.bg-grey, .bg-grey-lighter, .bg-grey-lightest, 
+.bg-grey-gradient-top, .bg-grey-gradient-right, .bg-grey-gradient-bottom, .bg-grey-gradient-left {
 	.prices-box {
 		background: $color-white;
 		border: 0;
 		&.prices-box-recommended {
-			background: $bg-dark-lighter;
+			background: $bg-dark-lightest;
 			color: $color-white-05;
 			h1, h2, h3, h4, h5, h6 {
 				color: $color-white;
@@ -70,8 +71,7 @@
 	}
 }
 
-.bg-dark, .bg-dark-lighter, 
-.bg-black-01, .bg-black-02, .bg-black-03, .bg-black-04, .bg-black-05, .bg-black-06,  .bg-black-07, .bg-black-08, .bg-black-09 {
+.bg-dark, .bg-dark-lighter, .bg-dark-lightest, div[class^='bg-black'], div[class*=' bg-black'] {
 	.prices-box {
 		border-color: $color-white-02;
 		color: $color-white-05;

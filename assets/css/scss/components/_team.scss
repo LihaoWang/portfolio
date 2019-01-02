@@ -2,10 +2,7 @@
 // Team Styles //
 //
 .team-wrapper {
-	margin-bottom: -50px;
-
 	.team-box, .team-box-circle {
-		margin-bottom: 50px;
 		text-align: center;
 		.team-img {
 			position: relative;
@@ -102,7 +99,7 @@
 			&:hover {
 				img {
 					@include transform(scale(1.03) translateY(0));
-					@include filter(blur(2px));
+					@include filter(blur(1.5px));
 				}
 				div {
 					opacity: 1;
@@ -198,7 +195,7 @@
 			&:hover {
 				img {
 					@include transform(scale(1.03));
-					@include filter(blur(2px));
+					@include filter(blur(1.5px));
 				}
 				div {
 					opacity: 1;

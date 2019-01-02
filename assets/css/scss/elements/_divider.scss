@@ -51,8 +51,7 @@ hr {
 //
 // Divider on dark //
 //
-.bg-dark, .bg-dark-lighter, 
-.bg-black-01, .bg-black-02, .bg-black-03, .bg-black-04, .bg-black-05, .bg-black-06,  .bg-black-07, .bg-black-08, .bg-black-09 {
+.bg-dark, .bg-dark-lighter, .bg-dark-lightest, div[class^='bg-black'], div[class*=' bg-black'] {
 	hr { background: $color-white-01; }
 }
 
@@ -95,8 +94,7 @@ hr {
 		}
 	}
 }
-.bg-dark, .bg-dark-lighter, 
-.bg-black-01, .bg-black-02, .bg-black-03, .bg-black-04, .bg-black-05, .bg-black-06,  .bg-black-07, .bg-black-08, .bg-black-09 {
+.bg-dark, .bg-dark-lighter, .bg-dark-lightest, div[class^='bg-black'], div[class*=' bg-black'] {
 	.divider-dots {
 		span {
 			background: $color-white-01;
@@ -168,8 +166,7 @@ hr {
 		}
 	}
 }
-.bg-dark, .bg-dark-lighter, 
-.bg-black-01, .bg-black-02, .bg-black-03, .bg-black-04, .bg-black-05, .bg-black-06,  .bg-black-07, .bg-black-08, .bg-black-09 {
+.bg-dark, .bg-dark-lighter, .bg-dark-lightest, div[class^='bg-black'], div[class*=' bg-black'] {
 	.divider-zigzag {
 		span { &:before, &:after { background: $color-white-01; } }
 	}
@@ -179,6 +176,9 @@ hr {
 // ZigZag Colors //
 //
 .divider-zigzag {
+	&.divider-zigzag-color-black {
+		span { &:before, &:after { background: $color-black; } }
+	}
 	&.divider-zigzag-color-black-09 {
 		span { &:before, &:after { background: $color-black-09; } }
 	}

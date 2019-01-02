@@ -8,6 +8,7 @@
 }
 input, 
 textarea {
+	background: transparent;
 	width: 100%;
 	border: 1px solid $color-black-01;
 	margin-bottom: 10px;
@@ -44,7 +45,7 @@ input, textarea, .form-control {
 		color: $color-primary-lighter;
 	}
 	&:focus {
-		border-color: $color-dark;
+		border-color: $color-black-02;
 	}
 }
 .form-control {
@@ -96,6 +97,7 @@ input, textarea, .form-control {
 // Select //
 //
 .custom-select {
+	background-color: transparent;
 	width: auto;
 	min-width: 160px;
 	height: auto;
@@ -123,8 +125,57 @@ input, textarea, .form-control {
 	}
 }
 
-.bg-dark, .bg-dark-lighter, 
-.bg-black-01, .bg-black-02, .bg-black-03, .bg-black-04, .bg-black-05, .bg-black-06,  .bg-black-07, .bg-black-08, .bg-black-09 {
+//
+// Form Styles 2,3,4 //
+//
+form.form-style-3, .form-style-3, 
+form.form-style-4, .form-style-4 {
+	input, textarea, .form-control {
+		margin-bottom: 20px;
+		padding: 0 0 10px;
+		border-top-width: 0;
+		border-right-width: 0;
+		border-bottom-width: 1px;
+		border-left-width: 0;
+	}
+}
+form.form-style-2, .form-style-2, 
+form.form-style-4, .form-style-4 {
+	input, textarea, .form-control {
+		&:focus {
+			border-color: $color-dark;
+		}
+	}
+}
+
+//
+// Form Style 5 //
+//
+form.form-style-5, .form-style-5 {
+	input, textarea, .form-control {
+		background: $bg-grey;
+		border: 0;
+		&:focus {
+			background: $button-grey-lighter;
+		}
+	}
+}
+.bg-grey, .bg-grey-lighter, .bg-grey-lightest, 
+.bg-grey-gradient-top, .bg-grey-gradient-right, .bg-grey-gradient-bottom, .bg-grey-gradient-left {
+	form.form-style-5, .form-style-5 {
+		input, textarea, .form-control {
+			background: $color-white;
+			&:focus {
+				background: $color-white;
+			}
+		}
+	}
+}
+
+//
+// Forms on Dark background //
+//
+.bg-dark, .bg-dark-lighter, .bg-dark-lightest, div[class^='bg-black'], div[class*=' bg-black'] {
 	input, textarea, .form-control {
 		background: transparent;
 		border-color: $color-white-02;
@@ -145,7 +196,27 @@ input, textarea, .form-control {
 			color: $color-white-05;
 		}
 		&:focus {
-			border-color: $color-white;
+			border-color: $color-white-03;
 		}
+	}
+	form.form-style-2, .form-style-2, 
+	form.form-style-4, .form-style-4 {
+		input, textarea, .form-control {
+			&:focus {
+				border-color: $color-white;
+			}
+		}
+	}
+	form.form-style-5, .form-style-5 {
+		input, textarea, .form-control {
+			background: $color-white-01;
+			border: 0;
+			&:focus {
+				background: $color-white-02;
+			}
+		}
+	}
+	.custom-select {
+		background-color: $color-white;
 	}
 }

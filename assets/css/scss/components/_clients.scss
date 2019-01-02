@@ -114,9 +114,36 @@
 			width: 50%;
 		}
 	}
+	//
+	// Border Style - Solid //
+	//
+	&.border-style-solid {
+		border: 0;
+		li {
+			&:before {
+				border-left-style: solid;
+			}
+			&:after {
+				border-bottom-style: solid;
+			}
+		}
+	}
+	//
+	// Border Style - Dotted //
+	//
+	&.border-style-dotted {
+		border: 0;
+		li {
+			&:before {
+				border-left-style: dotted;
+			}
+			&:after {
+				border-bottom-style: dotted;
+			}
+		}
+	}
 }
-.bg-dark, .bg-dark-lighter, 
-.bg-black-01, .bg-black-02, .bg-black-03, .bg-black-04, .bg-black-05, .bg-black-06,  .bg-black-07, .bg-black-08, .bg-black-09 {
+.bg-dark, .bg-dark-lighter, .bg-dark-lightest, div[class^='bg-black'], div[class*=' bg-black'] {
 	.clients-grid {
 		li {
 			&:before, &:after {

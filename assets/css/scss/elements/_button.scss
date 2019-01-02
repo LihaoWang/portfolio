@@ -36,11 +36,11 @@
 //
 // Bootstrap Button - Sizes //
 //
-.btn-xs { padding: 5px 10px; }
-.btn-sm { padding: 10px 20px; }
-.btn-md { padding: 15px 30px; }
-.btn-lg { padding: 15px 40px; }
-.btn-xl { padding: 20px 50px; }
+.btn-xs { padding: 8px 14px; }
+.btn-sm { padding: 10px 22px; }
+.btn-md { padding: 14px 34px; }
+.btn-lg { padding: 16px 42px; }
+.btn-xl { padding: 20px 56px; }
 
 //
 // Bootstrap Button - Styles //
@@ -397,11 +397,11 @@ a.btn-outline-dark {
 //
 // Template Button - Sizes //
 //
-.button-xs { padding: 5px 10px; }
-.button-sm { padding: 10px 20px; }
-.button-md { padding: 15px 30px; }
-.button-lg { padding: 15px 40px; }
-.button-xl { padding: 20px 50px; }
+.button-xs { padding: 8px 14px; }
+.button-sm { padding: 10px 22px; }
+.button-md { padding: 14px 34px; }
+.button-lg { padding: 16px 42px; }
+.button-xl { padding: 20px 54px; }
 .button-fullwidth { width: 100%; text-align: center; }
 
 //
@@ -441,6 +441,11 @@ a.btn-outline-dark {
 	&:hover, &:focus {
 		@include transform(scale(1.03));
 	}
+	&.button-circle {
+		&:hover, &:focus {
+			@include transform(scale(1.04));
+		}
+	}
 }
 //
 // Template Button Hover - Shadow //
@@ -455,7 +460,7 @@ a.btn-outline-dark {
 // Template Button - Shadow //
 //
 .button-shadow, a.button-shadow {
-	@include box-shadow(0 2px 16px 0 rgba(0,0,0,0.08));
+	@include box-shadow(0 2px 14px 0 rgba(0,0,0,0.09));
 }
 
 //
@@ -1044,6 +1049,56 @@ a.btn-outline-dark {
 }
 
 //
+// Template Button - Gradient //
+//
+.button-gradient-grey, a.button-gradient-grey {
+	opacity: 0.8;
+	background-image: linear-gradient(to right, #dcdcdc, #f0f0f0);
+	border: 0;
+	&:hover, &:focus {
+		opacity: 1;
+		background-image: linear-gradient(to right, #dcdcdc, #f0f0f0);
+		border: 0;
+		color: $color-dark;
+	}
+}
+.button-gradient-grey-2, a.button-gradient-grey-2 {
+	opacity: 1;
+	background-image: linear-gradient(to right, #dcdcdc, #f0f0f0);
+	border: 0;
+	&:hover, &:focus {
+		opacity: 0.8;
+		background-image: linear-gradient(to right, #dcdcdc, #f0f0f0);
+		border: 0;
+		color: $color-dark;
+	}
+}
+.button-gradient-dark, a.button-gradient-dark {
+	opacity: 0.9;
+	background-image: linear-gradient(to right, #141414, #404040);
+	border: 0;
+	color: $color-white;
+	&:hover, &:focus {
+		opacity: 1;
+		background-image: linear-gradient(to right, #141414, #404040);
+		border: 0;
+		color: $color-white;
+	}
+}
+.button-gradient-dark-2, a.button-gradient-dark-2 {
+	opacity: 1;
+	background-image: linear-gradient(to right, #141414, #404040);
+	border: 0;
+	color: $color-white;
+	&:hover, &:focus {
+		opacity: 0.9;
+		background-image: linear-gradient(to right, #141414, #404040);
+		border: 0;
+		color: $color-white;
+	}
+}
+
+//
 // Template Text Button //
 //
 .text-btn {
@@ -1060,12 +1115,11 @@ a.btn-outline-dark {
 		height: 1px;
 	}
 	&:before {
-		background: $border-grey;
+		background: $color-black-02;
 		width: 100%;
 	}
-
 	&:after {
-		background: $bg-dark;
+		background: $color-black-09;
 		width: 0;
 		@include transition(ease-out 0.2s);
 	}
@@ -1076,12 +1130,11 @@ a.btn-outline-dark {
 		}
 	}
 }
-.bg-dark, .bg-dark-lighter, 
-.bg-black-01, .bg-black-02, .bg-black-03, .bg-black-04, .bg-black-05, .bg-black-06, .bg-black-07, .bg-black-08, .bg-black-09 {
+.bg-dark, .bg-dark-lighter, .bg-dark-lightest, div[class^='bg-black'], div[class*=' bg-black'] {
 	.text-btn {
 		color: $color-white-07;
 		&:before {
-			background: $color-white-02;
+			background: $color-white-03;
 		}
 		&:after {
 			background: $color-white;
@@ -1121,8 +1174,7 @@ a.btn-outline-dark {
 		}
 	}
 }
-.bg-dark, .bg-dark-lighter, 
-.bg-black-01, .bg-black-02, .bg-black-03, .bg-black-04, .bg-black-05, .bg-black-06, .bg-black-07, .bg-black-08, .bg-black-09 {
+.bg-dark, .bg-dark-lighter, .bg-dark-lightest, div[class^='bg-black'], div[class*=' bg-black'] {
 	.text-btn-2 {
 		color: $color-white;
 		&:before, &:after {
@@ -1157,8 +1209,7 @@ a.btn-outline-dark {
 		}
 	}
 }
-.bg-dark, .bg-dark-lighter, 
-.bg-black-01, .bg-black-02, .bg-black-03, .bg-black-04, .bg-black-05, .bg-black-06, .bg-black-07, .bg-black-08, .bg-black-09 {
+.bg-dark, .bg-dark-lighter, .bg-dark-lightest, div[class^='bg-black'], div[class*=' bg-black'] {
 	.text-btn-3 {
 		color: $color-white-07;
 		&:before {
@@ -1221,6 +1272,40 @@ a.btn-outline-dark {
 	height: 70px;
 	line-height: 70px;
 	i { line-height: 70px; }
+}
+
+//
+// Template Circle Button - Hover Slide //
+//
+.button-circle-hover-slide {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	i {
+		position: absolute;
+		left: 50%;
+		@include transition(ease-out 0.2s);
+		&:first-child {
+			top: 50%;
+			@include transform(translateX(-50%) translateY(-50%));
+		}
+		&:last-child {
+			top: 100%;
+			@include transform(translateX(-50%));
+		}
+	}
+	&:hover {
+		i {
+			&:first-child {
+				top: -100%;
+				@include transform(translateX(-50%) translateY(0));
+			}
+			&:last-child {
+				top: 50%;
+				@include transform(translateX(-50%) translateY(-50%));
+			}
+		}
+	}
 }
 
 //
@@ -1321,19 +1406,20 @@ a.btn-outline-dark {
 	}
 }
 
-
 //
 // Scroll To Top button //
 //
 .scrolltotop {
-	visibility: hidden;
-	opacity: 0;
 	position: fixed;
 	right: 20px;
 	bottom: 20px;
+	@include transform(translateY(3px));
 	z-index: 994;
+	visibility: hidden;
+	opacity: 0;
 	@include transition(ease-out 0.2s);
 	&.scrolltotop-show {
+		@include transform(translateY(0));
 		visibility: visible;
 		opacity: 1;
 	}

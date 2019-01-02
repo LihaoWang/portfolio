@@ -7,7 +7,7 @@
 		content: '';
 		position: absolute;
 		top: 0;
-		background: $border-grey;
+		background: $color-black-01;
 		width: 1px;
 		height: 100%;
 	}
@@ -76,6 +76,102 @@
 		    	}
 		    }
 		}
+		//
+		// Timeline left //
+		//
+		&.timeline-left {
+			&:before {
+				left: 200px;
+				@include transform(translateX(0));
+			}
+			.timeline {
+				.timeline-date {
+					width: 200px;
+					padding: 30px 30px 0 0;
+					h1, h2, h3, h4, h5, h6 {
+						&:before {
+				    		width: 7px;
+				    		height: 7px;
+						}
+					}
+				}
+				.timeline-content {
+					width: auto;
+					margin: 0 0 0 200px;
+					padding: 30px 0 0 30px;
+					text-align: left;
+				}
+				&:nth-child(even) {
+					.timeline-date {
+						left: auto;
+						text-align: right;
+						h1, h2, h3, h4, h5, h6 {
+							text-align: right;
+							&:before {
+			    				right: -34px;
+			    				left: auto;
+			    			}
+						}
+					}
+				}
+				&:last-child {
+					.timeline-date, .timeline-content {
+						padding-bottom: 30px;
+					}
+				}
+			}
+		}
+		//
+		// Timeline Right //
+		//
+		&.timeline-right {
+			&:before {
+				right: 200px;
+				left: auto;
+				@include transform(translateX(0));
+			}
+			.timeline {
+				.timeline-date {
+					right: 0;
+					left: auto;
+					width: 200px;
+					padding: 30px 0 0 30px;
+					text-align: left;
+					h1, h2, h3, h4, h5, h6 {
+			    		text-align: left;
+			    		&:before {
+			    			right: auto;
+				    		left: -34px;
+				    		width: 7px;
+				    		height: 7px;
+				    	}
+			    	}
+				}
+				.timeline-content {
+					width: auto;
+					margin: 0 200px 0 0;
+					padding: 30px 30px 0 0;
+					text-align: right;
+				}
+				&:nth-child(even) {
+					.timeline-date {
+						left: auto;
+						text-align: left;
+						h1, h2, h3, h4, h5, h6 {
+							text-align: left;
+							&:before {
+			    				left: -34px;
+			    			}
+						}
+					}
+				}
+				&:last-child {
+					.timeline-date, .timeline-content {
+						padding-bottom: 30px;
+					}
+				}
+			}
+		} // end Timeline Right //
 	}
 }
 @include breakpoint-less(lg) {
@@ -85,9 +181,13 @@
 			left: 0;
 		}
 		.timeline {
-			margin-bottom: 50px;
+			margin-bottom: 30px;
+			&:first-child {
+				padding-top: 30px;
+			}
 			&:last-child {
 				margin-bottom: 0;
+				padding-bottom: 30px;
 			}
 			.timeline-date {
 				h1, h2, h3, h4, h5, h6 {
@@ -107,6 +207,23 @@
 				h1, h2, h3, h4, h5, h6 {
 					&:before {
 						left: -24px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.bg-dark, .bg-dark-lighter, .bg-dark-lightest, div[class^='bg-black'], div[class*=' bg-black'] {
+	.timeline-wrapper {
+		&:before {
+			background: $color-white-02;
+		}
+		.timeline {
+			.timeline-date {
+				h1, h2, h3, h4, h5, h6 {
+					&:before {
+						background: $color-white;
 					}
 				}
 			}

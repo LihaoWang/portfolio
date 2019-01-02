@@ -54,42 +54,6 @@
 			.portfolio-item { width: 16.66%; }
 		}
 	}
-	&.column-7 {
-		@extend .column-4;
-		@include breakpoint-above(xl) {
-			.portfolio-item { width: 14.28%; }
-		}
-	}
-	&.column-8 {
-		@extend .column-4;
-		@include breakpoint-above(xl) {
-			.portfolio-item { width: 12.5%; }
-		}
-	}
-	&.column-9 {
-		@extend .column-4;
-		@include breakpoint-above(xl) {
-			.portfolio-item { width: 11.11%; }
-		}
-	}
-	&.column-10 {
-		@extend .column-4;
-		@include breakpoint-above(xl) {
-			.portfolio-item { width: 10%; }
-		}
-	}
-	&.column-11 {
-		@extend .column-4;
-		@include breakpoint-above(xl) {
-			.portfolio-item { width: 9.09%; }
-		}
-	}
-	&.column-12 {
-		@extend .column-4;
-		@include breakpoint-above(xl) {
-			.portfolio-item { width: 8.33%; }
-		}
-	}
 	//
 	// Portfolio box spacings //
 	//
@@ -205,15 +169,31 @@
 			}
 		}
 	}
+	//
+	// Filter Font Styles //
+	//
 	&.filter-font-2 {
 		ul {
 			li {
-				font: 400 15px $font-primary;
+				font-size: 15px;
 				letter-spacing: 0;
 				text-transform: none;
 			}
 		}
 	}
+	&.filter-font-3 {
+		ul {
+			li {
+				font-size: 16px;
+				font-weight: 300;
+				letter-spacing: 0;
+				text-transform: none;
+			}
+		}
+	}
+	//
+	// Filter Styles //
+	//
 	&.filter-style-2 {
 		ul {
 			margin-bottom: -20px;
@@ -284,8 +264,7 @@
 		}
 	}
 }
-.bg-dark, .bg-dark-lighter, 
-.bg-black-01, .bg-black-02, .bg-black-03, .bg-black-04, .bg-black-05, .bg-black-06, .bg-black-07, .bg-black-08, .bg-black-09 {
+.bg-dark, .bg-dark-lighter, .bg-dark-lightest, div[class^='bg-black'], div[class*=' bg-black'] {
 	.filter {
 		ul {
 			li {
@@ -376,7 +355,7 @@
 			top: 0;
 			left: 0;
 			opacity: 0;
-			background: $color-black-07;
+			background: $color-black-06;
 			width: 100%;
 			height: 100%;
 			color: $color-white-07;
@@ -408,8 +387,8 @@
 		&:hover {
 			.portfolio-img {
 				img {
-					@include transform(scale(1.05));
-					@include filter(blur(2px));
+					@include transform(scale(1.03));
+					@include filter(blur(1.5px));
 				}
 			}
 			.portfolio-title {
@@ -469,7 +448,7 @@
 				.portfolio-img {
 					img {
 						@include transform(scale(1.02));
-						@include filter(blur(0px));
+						@include filter(blur(0));
 					}
 					&:before {
 						opacity: 1;
@@ -568,7 +547,7 @@
 				.portfolio-img {
 					img {
 						@include transform(translateY(-20px));
-						@include filter(blur(0px));
+						@include filter(blur(0));
 					}
 				}
 			}
@@ -631,6 +610,75 @@
 						opacity: 1;
 					}
 				}
+			}
+		}
+	}
+}
+
+//
+// Hover Style 6 //
+//
+.hover-style-6 {
+	.portfolio-item {
+		.portfolio-box {
+			&:hover {
+				.portfolio-img {
+					img {
+						@include transform(scale(1));
+						@include filter(blur(0));
+					}
+				}
+			}
+		}
+	}
+}
+
+//
+// Portfolio - Infinite Scroll //
+//
+.infinite-scroll-status {
+	display: none;
+	margin-top: 30px;
+	text-align: center;
+	color: $color-primary;
+	.infinite-scroll-request {
+		span {
+			display: inline-block;
+			background: $color-black-09;
+			width: 7px;
+			height: 7px;
+			border-radius: 50%;
+			margin-right: 5px;
+			&:last-child {
+				margin-right: 0;
+			}
+			@include animation(infinite-load-wave 0.6s infinite ease-in-out);
+			&:nth-child(2) {
+			  @include animation-delay(0.1s);
+			}
+			&:nth-child(3) {
+			  @include animation-delay(0.2s);
+			}
+			&:nth-child(4) {
+			  @include animation-delay(0.3s);
+			}
+		}
+	}
+}
+
+@keyframes infinite-load-wave {
+	0% { margin-bottom: 0 }
+	50% { margin-bottom: 6px }
+	100% { margin-bottom: 0 }
+}
+
+.bg-dark, .bg-dark-lighter, .bg-dark-lightest, 
+.bg-black-01, .bg-black-02, .bg-black-03, .bg-black-04, .bg-black-05, .bg-black-06, .bg-black-07, .bg-black-08, .bg-black-09 {
+	.infinite-scroll-status {
+		color: $color-white-07;
+		.infinite-scroll-request {
+			span {
+				background: $color-white;
 			}
 		}
 	}

@@ -79,7 +79,7 @@ $(function() {
   });
 
   //
-  // Navicon transform into X //
+  // Transform Navicon into X //
   //
   navToggle.on("click", function() {
     if (navToggle.hasClass("nav-toggle-close")) {
@@ -119,7 +119,7 @@ $(function() {
   });
 
   //
-  // Transform plus into minus //
+  // Transform Plus into Minus //
   //
   dropdownBtn.on("click", function() {
     var m = $(this).parent(".nav-dropdown").children(".dropdown-menu");
@@ -178,7 +178,7 @@ $(function() {
   });
 
   //
-  // Position toggle button left if nav is aligned left //
+  // Position Toggle Button to the left if Nav is aligned left //
   //
   if (nav.hasClass("mr-auto")) {
     navToggle.addClass("left");
@@ -222,7 +222,7 @@ $(function() {
   var toggleBtn = $(".fullscreen-toggle-btn");
 
   //
-  // Show Toggle menu on Toggle //
+  // Show Menu on Toggle //
   //
   toggleBtn.on("click", function(e) {
     if (toggleMenu.hasClass("fullscreen-menu-show")) {
@@ -275,6 +275,9 @@ $(function() {
     }
   });
 
+  //
+  // Close Mega Menu //
+  //
   var megaMenu = $(".mega-menu");
 
   navToggle.on("click", function() {
@@ -333,31 +336,6 @@ $(function() {
   $(".sidebar-menu a[href='#']").on("click", function(e) {
     e.preventDefault();
   });
-  
-
-  /*===============================================
-    Subscribe Lightbox
-  ===============================================*/
-  var subscribeBtn = $(".subscribe-lightbox-link");
-  var subscribeLightbox = $(".subscribe-lightbox");
-
-  subscribeBtn.on("click", function(e) {
-    if (subscribeLightbox.hasClass("subscribe-lightbox-show")) {
-      subscribeLightbox.removeClass("subscribe-lightbox-show");
-    }
-    else {
-      subscribeLightbox.addClass("subscribe-lightbox-show");
-    }
-    e.stopPropagation();
-  });
-
-  $(document).on("click", function(e) {
-    if ( $(e.target).closest(".subscribe-lightbox div[class^='col-']").length === 0 ) {
-      if (subscribeLightbox.hasClass("subscribe-lightbox-show")) {
-        subscribeLightbox.removeClass("subscribe-lightbox-show");
-      }
-    }
-  });
 
 
   /*===============================================
@@ -409,7 +387,7 @@ $(function() {
   var ssBtn = $(".scrolldown-btn, .scrolldown, .navbar a");
 
   ssBtn.on("click", function(e) {
-    htmlBody.animate({scrollTop: $(this.hash).offset().top}, 800, "easeInOutQuart");
+    htmlBody.animate({scrollTop: $(this.hash).offset().top}, 700, "easeInOutQuart");
     e.preventDefault();
   });
 
@@ -434,7 +412,7 @@ $(function() {
   // Animate button //
   //
   scrollTopBtn.on("click", function(){
-    htmlBody.animate({scrollTop : 0}, 800, "easeInOutQuart");
+    htmlBody.animate({scrollTop : 0}, 600, "easeInOutQuart");
     return false;
   });
   
@@ -445,7 +423,7 @@ $(function() {
   $(".portfolio-wrapper").imagesLoaded( function() {
     var $portfolioWrapper = $(".portfolio-wrapper").isotope({
       itemSelector: ".portfolio-item",
-      transitionDuration: 350
+      transitionDuration: 300 // 0.3 second
     });
     var filter = $(".filter ul li");
 
@@ -458,7 +436,7 @@ $(function() {
       $(this).addClass("active");
     });
   });
-  
+
 
   /*===============================================
     Owl Carousel Sliders
@@ -581,10 +559,6 @@ $(function() {
   //
   // Lightbox - Gallery //
   //
-  $(".gallery-box").on('click', function () {
-    $(this).next().magnificPopup('open');
-  });
-
   $(".gallery-wrapper").each(function () {
     $(this).magnificPopup({
       delegate: 'a',
@@ -603,49 +577,53 @@ $(function() {
   //
   // Lightbox - Youtube video //
   //
-  var popupYoutube = $(".popup-youtube");
-  var youtubeSrc = popupYoutube.attr("data-youtube-src");
+  $(".popup-youtube").each(function() {
+    var popupYoutube = $(this);
+    var youtubeSrc = popupYoutube.attr("data-youtube-src");
 
-  popupYoutube.magnificPopup({
-    items: { src: youtubeSrc },
-    type: "iframe",
-    fixedContentPos: false,
-    removalDelay: 200,
-    preloader: false,
-    iframe: {
-      patterns: {
-        youtube: {
-          index: "youtube.com/", // String that detects type of video (in this case YouTube). Simply via url.indexOf(index).
-          id: "v=",
-          src: youtubeSrc
-        }
-      },
-      srcAction: "iframe_src" // Templating object key. First part defines CSS selector, second attribute. "iframe_src" means: find "iframe" and set attribute "src".
-    }
+    popupYoutube.magnificPopup({
+      items: { src: youtubeSrc },
+      type: "iframe",
+      fixedContentPos: false,
+      removalDelay: 200,
+      preloader: false,
+      iframe: {
+        patterns: {
+          youtube: {
+            index: "youtube.com/", // String that detects type of video (in this case YouTube). Simply via url.indexOf(index).
+            id: "v=",
+            src: youtubeSrc
+          }
+        },
+        srcAction: "iframe_src" // Templating object key. First part defines CSS selector, second attribute. "iframe_src" means: find "iframe" and set attribute "src".
+      }
+    });
   });
 
   //
   // Lightbox - Vimeo video //
   //
-  var popupVimeo = $(".popup-vimeo");
-  var vimeoSrc = popupVimeo.attr("data-vimeo-src");
+  $(".popup-vimeo").each(function() {
+    var popupVimeo = $(this);
+    var vimeoSrc = popupVimeo.attr("data-vimeo-src");
 
-  popupVimeo.magnificPopup({
-    items: { src: vimeoSrc },
-    type: "iframe",
-    fixedContentPos: false,
-    removalDelay: 200,
-    preloader: false,
-    iframe: {
-      patterns: {
-        vimeo: {
-          index: "vimeo.com/", // String that detects type of video (in this case YouTube). Simply via url.indexOf(index).
-          id: "/",
-          src: vimeoSrc
-        }
-      },
-      srcAction: "iframe_src" // Templating object key. First part defines CSS selector, second attribute. "iframe_src" means: find "iframe" and set attribute "src".
-    }
+    popupVimeo.magnificPopup({
+      items: { src: vimeoSrc },
+      type: "iframe",
+      fixedContentPos: false,
+      removalDelay: 200,
+      preloader: false,
+      iframe: {
+        patterns: {
+          vimeo: {
+            index: "vimeo.com/", // String that detects type of video (in this case YouTube). Simply via url.indexOf(index).
+            id: "/",
+            src: vimeoSrc
+          }
+        },
+        srcAction: "iframe_src" // Templating object key. First part defines CSS selector, second attribute. "iframe_src" means: find "iframe" and set attribute "src".
+      }
+    });
   });
 
 
@@ -864,7 +842,7 @@ $(function() {
 
     else {
       $.ajax({
-        url:"../assets/php/contact-form.php",
+        url:"../../assets/php/contact-form.php",
         data:$(this).serialize(),
         type:"POST",
         success:function(data){
@@ -883,6 +861,5 @@ $(function() {
 
     e.preventDefault();
   });
-
 
 });
